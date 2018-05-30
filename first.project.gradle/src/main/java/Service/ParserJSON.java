@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import Entity.Weather;
+import entity.Weather;
 
 import java.io.IOException;
 

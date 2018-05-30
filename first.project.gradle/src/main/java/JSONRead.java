@@ -1,11 +1,11 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Entity.Weather;
-import Service.AllPropertiesImpl;
-import Service.AllProperties;
-import Service.ParserJSON;
-import Service.ParserJSONImpl;
+import entity.Weather;
+import service.AllPropertiesImpl;
+import service.AllProperties;
+import service.ParserJSON;
+import service.ParserJSONImpl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.json.JSONException;
