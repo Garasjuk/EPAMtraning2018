@@ -13,7 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class Send {
-    private final static Log log = LogFactory.getLog(Send.class);
+    private static final  Log log = LogFactory.getLog(Send.class);
 
     public void sendMessage(String[] args) throws IOException {
         AllProperties allProperties = new AllProperties();

@@ -19,7 +19,6 @@ public class ParserJSONImpl implements ParserJSON {
         BufferedReader in = connect.connctJSON(object);
         String inputLine;
 
-        Weather weather = new Weather();
         StringBuilder response = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
@@ -32,21 +31,7 @@ public class ParserJSONImpl implements ParserJSON {
         JSONObject jwind = jo.getJSONObject("wind");
         JSONObject jweather = jo.getJSONArray("weather").getJSONObject(0);
 
-        // getting Country
-        weather.setCity((String) jo.get("name"));
-        weather.setCountry((String) jsys.get("country"));
-
-        // getting Weather
-        weather.setDescription((String) jweather.get("description"));
-
-        // getting temp
-        weather.setTemp(Double.valueOf(String.valueOf(jmain.get("temp"))));
-
-        // getting humidity
-        weather.setHumidity((int) jmain.get("humidity"));
-
-        //getting wind
-        weather.setSpeed(Double.valueOf(String.valueOf(jwind.get("speed"))));
+        Weather weather = new Weather((String) jweather.get("description"), Double.valueOf(String.valueOf(jmain.get("temp"))),(int) jmain.get("humidity"), Double.valueOf(String.valueOf(jwind.get("speed"))), (String) jsys.get("country"), (String) jo.get("name") );
 
         return weather;
     }

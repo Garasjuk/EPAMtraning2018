@@ -1,59 +1,44 @@
 package entity;
 
 public class Weather {
-    private String description;
-    private double temp;
-    private int humidity;
-    private double speed;
-    private String country;
-    private String city;
+    private final String description;
+    private final double temp;
+    private final int humidity;
+    private final double speed;
+    private final String country;
+    private final String city;
 
+
+    public Weather(String description, double temp, int humidity, double speed, String country, String city) {
+        this.description = description;
+        this.temp = temp;
+        this.humidity = humidity;
+        this.speed = speed;
+        this.country = country;
+        this.city = city;
+    }
 
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public double getTemp() {
         return temp;
     }
 
-    public void setTemp(double temp) {
-        this.temp = temp;
-    }
-
     public int getHumidity() {
         return humidity;
-    }
-
-    public void setHumidity(int humidity) {
-        this.humidity = humidity;
     }
 
     public double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getCity() {
         return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 }

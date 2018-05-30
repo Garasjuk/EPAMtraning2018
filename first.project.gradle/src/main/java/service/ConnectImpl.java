@@ -17,7 +17,7 @@ public class ConnectImpl implements Connect {
 
     @Autowired
     private AllProperties allProperties = new AllPropertiesImpl();
-    private final static Log log = LogFactory.getLog(ConnectImpl.class);
+    private static final Log log = LogFactory.getLog(ConnectImpl.class);
 
     @Override
     public BufferedReader connctJSON(Object object) {

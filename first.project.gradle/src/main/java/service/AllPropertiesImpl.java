@@ -4,14 +4,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import org.springframework.stereotype.Service;
 
 @Service("AllProperties")
 public class AllPropertiesImpl implements AllProperties {
 
-    public ArrayList getAllCitys() throws IOException {
-        ArrayList arrayList = new ArrayList();
+    public List getAllCitys() throws IOException {
+        List arrayList = new ArrayList();
         Properties propCity = new Properties();
         String propFileCity = "city.properties";
         InputStream inputStreamCity = getClass().getClassLoader().getResourceAsStream(propFileCity);

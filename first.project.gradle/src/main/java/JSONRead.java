@@ -1,5 +1,7 @@
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import entity.Weather;
 import service.AllPropertiesImpl;
@@ -18,12 +20,12 @@ public class JSONRead {
     @Autowired
     private static ParserJSON parserJSON = new ParserJSONImpl();
 
-    private final static Log log = LogFactory.getLog(JSONRead.class);
+    private static final Log log = LogFactory.getLog(JSONRead.class);
 
     public static void main(String[] args) {
 
         try {
-            ArrayList arrayList = allProperties.getAllCitys();
+            List arrayList = allProperties.getAllCitys();
             for (Object mass : arrayList) {
                 show(parserJSON.pars(mass));
             }
