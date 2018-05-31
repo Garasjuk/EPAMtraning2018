@@ -31,8 +31,15 @@ public class ParserJSONImpl implements ParserJSON {
         JSONObject jwind = jo.getJSONObject("wind");
         JSONObject jweather = jo.getJSONArray("weather").getJSONObject(0);
 
-        Weather weather = new Weather((String) jweather.get("description"), Double.valueOf(String.valueOf(jmain.get("temp"))),(int) jmain.get("humidity"), Double.valueOf(String.valueOf(jwind.get("speed"))), (String) jsys.get("country"), (String) jo.get("name") );
 
-        return weather;
+        Weather.Builder weatherBuilder = Weather.builder();
+                weatherBuilder.setDescription((String) jweather.get("description"));
+                weatherBuilder.setTemp(Double.valueOf(String.valueOf(jmain.get("temp"))));
+                weatherBuilder.setHumidity((int) jmain.get("humidity"));
+                weatherBuilder.setSpeed(Double.valueOf(String.valueOf(jwind.get("speed"))));
+                weatherBuilder.setCountry((String) jsys.get("country"));
+                weatherBuilder.setCity((String) jo.get("name"));
+
+        return weatherBuilder.build();
     }
 }
